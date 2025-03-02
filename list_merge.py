@@ -40,3 +40,22 @@ try:
     print("TEST 2 PASS")
 except AssertionError:
     print("Test filure")
+
+
+
+
+"""
+Merge two normal sorted list
+"""
+
+# TODO
+def merge_two_normal_list(nums1, nums2):
+    pass
+
+
+"""
+Merge two unsorted list
+"""
+
+def merge_unsorted_list(nums1, nums2):
+    pass

@@ -50,8 +50,32 @@ Merge two normal sorted list
 
 # TODO
 def merge_two_normal_list(nums1, nums2):
-    pass
+    num1_idx, num2_idx = 0,0
+    result = []
+    while num1_idx < len(nums1) and num2_idx < len(nums2):
+        if nums1[num1_idx] == nums2[num2_idx]:
+            result.extend([nums2[num2_idx],nums2[num2_idx]])
+            num2_idx += 1
+            num1_idx += 1
+        elif nums1[num1_idx] > nums2[num2_idx]:
+            result.append(nums2[num2_idx])
+            num2_idx += 1
+        elif nums1[num1_idx] < nums2[num2_idx]:
+            result.append(nums1[num1_idx])
+            num1_idx += 1
 
+    if num1_idx < len(nums1):
+        result.extend(nums1[num1_idx:])
+    if num2_idx < len(nums2):
+        result.extend(nums2[num2_idx:])
+    return result
+
+
+try:
+    assert merge_two_normal_list([1,3,5,7,9], [2,4,6,8]) == [1,2,3,4,5,6,7,8,9]
+    print("TEST 1 PASS")
+except AssertionError:
+    print("TEST FILURE")
 
 """
 Merge two unsorted list
